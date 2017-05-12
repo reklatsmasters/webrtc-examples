@@ -1,0 +1,73 @@
+:root {
+  --workspace-height: 40vh;
+  --panel-heading-height: 47px;
+}
+
+/**
+ * Default working height
+ */
+.workspace-body {
+  height: var(--workspace-height);
+}
+
+/**
+ * Reset styles for textareas inside panel
+ */
+.panel-block.panel-control {
+  padding: 0;
+}
+
+.panel-block.panel-control .textarea {
+  border: none;
+  border-radius: initial;
+}
+
+/**
+ * Set bottom radius on panels
+ */
+.panel > :last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/**
+ * Set sticky hearder in the contact list
+ */
+.users-panel {
+  overflow-y: auto;
+  position: relative;
+}
+
+.users-panel > .panel-heading {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+/**
+ * Set correct size for textarea
+ */
+.history-area {
+  resize: none;
+  height: calc(var(--workspace-height) - var(--panel-heading-height));
+}
+
+/**
+ * Styling scrollbars
+ */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  margin: 5px;
+  background-color: #999;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  height: 5px;
+  display: block;
+}
