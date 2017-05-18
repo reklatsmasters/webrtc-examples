@@ -1,6 +1,6 @@
 :root {
   --workspace-height: 40vh;
-  --panel-heading-height: 47px;
+  --panel-heading-height: 45px;
 }
 
 /**
@@ -17,11 +17,6 @@
   padding: 0;
 }
 
-.panel-block.panel-control .textarea {
-  border: none;
-  border-radius: initial;
-}
-
 /**
  * Set bottom radius on panels
  */
@@ -33,23 +28,32 @@
 /**
  * Set sticky hearder in the contact list
  */
-.users-panel {
+.panel.scroll-panel {
   overflow-y: auto;
   position: relative;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 }
 
-.users-panel > .panel-heading {
+.panel.scroll-panel > .panel-block {
+  border-left: none;
+  border-right: none;
+}
+
+.panel.scroll-panel > .panel-heading {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
 }
 
 /**
  * Set correct size for textarea
  */
 .history-area {
-  resize: none;
-  height: calc(var(--workspace-height) - var(--panel-heading-height));
+  width: 100%;
 }
 
 /**
@@ -70,4 +74,15 @@
 ::-webkit-scrollbar-button:end:increment {
   height: 5px;
   display: block;
+}
+
+/**
+ * Remove borders and background from messages
+ */
+.message.is-transparent {
+  background: transparent;
+}
+
+.message.is-transparent .message-body {
+  border: none;
 }
