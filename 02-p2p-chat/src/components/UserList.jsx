@@ -1,7 +1,7 @@
 import React, { Children } from 'react'
-import {Level, LevelLeft, LevelRight} from 'components/Level'
+import { Level, LevelLeft, LevelRight } from 'components/Level'
 
-export default function UserList({children}) {
+export default function UserList({ children }) {
   return (
     <div className="panel workspace-body scroll-panel">
       <div className="panel-heading">

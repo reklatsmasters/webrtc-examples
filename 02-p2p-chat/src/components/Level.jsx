@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Level({children}) {
+export function Level({ children }) {
   return (
     <div className="level">
       {children}
@@ -8,7 +8,7 @@ export function Level({children}) {
   )
 }
 
-export function LevelLeft({children}) {
+export function LevelLeft({ children }) {
   return (
     <div className="level-left">
       <div className="level-item">
@@ -18,7 +18,7 @@ export function LevelLeft({children}) {
   )
 }
 
-export function LevelRight({children}) {
+export function LevelRight({ children }) {
   return (
     <div className="level-right">
       <div className="level-item">

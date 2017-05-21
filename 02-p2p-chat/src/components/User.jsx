@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function User({username}) {
+export default function User({ username }) {
   return (
     <a className="panel-block">
       <span className="panel-icon">
