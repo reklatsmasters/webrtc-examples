@@ -6,18 +6,16 @@ import App from 'components/App'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import io from 'socket.io-client'
 
 import SignalClient from 'app/transport/signal-client'
 import { signalServerChangeReadyState } from 'app/action_creators'
+import reducer from 'app/reducers'
 
 import 'css/styles.css'
 
 const socket = io('/')
-const signalClient = SignalClient(socket)
-
-function reducer(state = {}) {
-  return state
-}
+const signalClient = new SignalClient(socket)
 
 const store = createStore(
   reducer,
@@ -31,10 +29,8 @@ render(
 
 signalClient.onOnline(() => {
   store.dispatch(signalServerChangeReadyState(true))
-  console.log('[srv] online')
 })
 
 signalClient.onOffline(() => {
   store.dispatch(signalServerChangeReadyState(false))
-  console.log('[srv] offline')
 })
